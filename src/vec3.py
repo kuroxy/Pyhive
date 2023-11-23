@@ -13,6 +13,9 @@ class Vec3:
             return self._poslist == other._poslist
         return False
 
+    def __hash__(self):
+        return hash(f"{self.x}{self.y}{self.z}")
+
     def get_neighbours(self):
         neighs = []
         for pos in Vec3.neighbours:

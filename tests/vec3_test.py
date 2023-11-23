@@ -39,6 +39,14 @@ class TestNodeMethods(unittest.TestCase):
 
         self.assertEqual(v.get_neighbours(), neighsvec3)
 
+    def test_hash(self):
+        v = Vec3([1, 2, 3])
+        v2 = Vec3([1, 2, 3])
+        v3 = Vec3([2, 7, 3])
+
+        self.assertEqual(v.__hash__(), v2.__hash__())
+        self.assertNotEqual(v.__hash__(), v3.__hash__())
+
 
 if __name__ == '__main__':
     unittest.main()
